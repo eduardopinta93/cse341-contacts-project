@@ -1,0 +1,5 @@
+### Get all contacts
+GET https://cse341-contacts-project-xld7.onrender.com/contacts
+
+### Get one contact
+GET https://cse341-contacts-project-xld7.onrender.com/contacts/6a4bda3af63f5b193b8f3be0
