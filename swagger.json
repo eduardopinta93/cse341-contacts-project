@@ -5,18 +5,18 @@
     "description": "API documentation for the CSE 341 Contacts project",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-contacts-project-xld7.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
       "get": {
         "description": "",
         "responses": {
-          "200": {
-            "description": "OK"
+          "default": {
+            "description": ""
           }
         }
       }
