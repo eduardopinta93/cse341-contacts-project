@@ -4,8 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
-  },
+  "start": "node server.js",
+  "swagger": "node swagger.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +17,8 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
-    "mongodb": "^7.4.0"
+    "mongodb": "^7.4.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   }
 }

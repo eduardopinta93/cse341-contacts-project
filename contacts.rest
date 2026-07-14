@@ -3,3 +3,30 @@ GET https://cse341-contacts-project-xld7.onrender.com/contacts
 
 ### Get one contact
 GET https://cse341-contacts-project-xld7.onrender.com/contacts/6a4bda3af63f5b193b8f3be0
+
+### Create a new contact
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Bruce",
+  "lastName": "Wayne",
+  "email": "bruce.wayne@email.com",
+  "favoriteColor": "Black",
+  "birthday": "1978-02-19"
+}
+
+### Update Bruce Wayne
+PUT http://localhost:3000/contacts/6a562e33a3af557c9bfb4636
+Content-Type: application/json
+
+{
+  "firstName": "Bruce",
+  "lastName": "Wayne",
+  "email": "bruce.wayne@wayneenterprises.com",
+  "favoriteColor": "Dark Gray",
+  "birthday": "1978-02-19"
+}
+
+### Delete Bruce Wayne
+DELETE http://localhost:3000/contacts/6a562e33a3af557c9bfb4636
