@@ -74,31 +74,40 @@ router.post(
     #swagger.summary = 'Create a new contact'
     #swagger.description = 'Creates a new contact in the MongoDB contacts collection.'
 
-    #swagger.requestBody = {
+    #swagger.consumes = ['application/json']
+
+    #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Contact information',
       required: true,
-      content: {
-        "application/json": {
-          schema: {
-            firstName: "Bruce",
-            lastName: "Wayne",
-            email: "bruce.wayne@email.com",
-            favoriteColor: "Black",
-            birthday: "1978-02-19"
-          }
-        }
+      schema: {
+        firstName: 'Diana',
+        lastName: 'Prince',
+        email: 'diana.prince@themyscira.com',
+        favoriteColor: 'Gold',
+        birthday: '1985-03-22'
       }
     }
 
     #swagger.responses[201] = {
-      description: 'Contact created successfully'
+      description: 'Contact created successfully',
+      schema: {
+        id: '6a562e33a3af557c9bfb4636'
+      }
     }
 
     #swagger.responses[400] = {
-      description: 'Missing required fields'
+      description: 'Missing required fields',
+      schema: {
+        message: 'All fields are required'
+      }
     }
 
     #swagger.responses[500] = {
-      description: 'Internal server error'
+      description: 'Internal server error',
+      schema: {
+        message: 'Error creating contact'
+      }
     }
   */
   createContact

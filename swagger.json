@@ -90,27 +90,85 @@
         ],
         "summary": "Create a new contact",
         "description": "Creates a new contact in the MongoDB contacts collection.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Contact information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Diana"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Prince"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "diana.prince@themyscira.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "Gold"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1985-03-22"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "201": {
-            "description": "Contact created successfully"
+            "description": "Contact created successfully",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "example": "6a562e33a3af557c9bfb4636"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "400": {
-            "description": "Missing required fields"
+            "description": "Missing required fields",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "All fields are required"
+                }
+              },
+              "xml": {
+                "name": "main"
+              }
+            }
           },
           "500": {
-            "description": "Internal server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "firstName": "Bruce",
-                "lastName": "Wayne",
-                "email": "bruce.wayne@email.com",
-                "favoriteColor": "Black",
-                "birthday": "1978-02-19"
+            "description": "Internal server error",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "Error creating contact"
+                }
+              },
+              "xml": {
+                "name": "main"
               }
             }
           }
