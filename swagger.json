@@ -241,6 +241,9 @@
         ],
         "summary": "Update a contact",
         "description": "Updates an existing contact using its MongoDB ObjectId.",
+        "consumes": [
+          "application/json"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -248,6 +251,37 @@
             "required": true,
             "type": "string",
             "description": "MongoDB ObjectId of the contact"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Updated contact information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "example": "Bruce"
+                },
+                "lastName": {
+                  "type": "string",
+                  "example": "Wayne"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "bruce.wayne@wayneenterprises.com"
+                },
+                "favoriteColor": {
+                  "type": "string",
+                  "example": "Dark Gray"
+                },
+                "birthday": {
+                  "type": "string",
+                  "example": "1978-02-19"
+                }
+              }
+            }
           }
         ],
         "responses": {
@@ -262,20 +296,6 @@
           },
           "500": {
             "description": "Internal server error"
-          }
-        },
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "firstName": "Bruce",
-                "lastName": "Wayne",
-                "email": "bruce.wayne@wayneenterprises.com",
-                "favoriteColor": "Dark Gray",
-                "birthday": "1978-02-19"
-              }
-            }
           }
         }
       },

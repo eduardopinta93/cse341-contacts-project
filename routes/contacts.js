@@ -126,18 +126,18 @@ router.put(
       type: 'string'
     }
 
-    #swagger.requestBody = {
+    #swagger.consumes = ['application/json']
+
+      #swagger.parameters['body'] = {
+      in: 'body',
+      description: 'Updated contact information',
       required: true,
-      content: {
-        "application/json": {
-          schema: {
-            firstName: "Bruce",
-            lastName: "Wayne",
-            email: "bruce.wayne@wayneenterprises.com",
-            favoriteColor: "Dark Gray",
-            birthday: "1978-02-19"
-          }
-        }
+      schema: {
+        firstName: 'Bruce',
+        lastName: 'Wayne',
+        email: 'bruce.wayne@wayneenterprises.com',
+        favoriteColor: 'Dark Gray',
+        birthday: '1978-02-19'
       }
     }
 
